@@ -1,0 +1,23 @@
+<div data-hook="admin_block_form_fields">
+  <div class="left eight columns alpha" data-hook="admin_block_form_left">
+    <%= f.field_container :title do %>
+      <%= f.label :title %> <span class="required">*</span><br />
+      <%= f.text_field :title, :class => 'fullwidth title' %>
+      <%= f.error_message_on :title %>
+    <% end %>
+
+    <%= f.field_container :link do %>
+      <%= f.label :link %> <span class="required">*</span><br />
+      <%= f.text_field :link, :class => 'fullwidth title' %>
+      <%= f.error_message_on :link %>
+    <% end %>
+
+    <%= f.field_container :image do %>
+      <%= f.label :image %> <span class="required">*</span><br />
+      <%= f.file_field :image, :class => 'fullwidth title' %>
+      <%= f.error_message_on :image %>
+    <% end %>
+
+  </div>
+  <div class="clear"></div>
+</div>

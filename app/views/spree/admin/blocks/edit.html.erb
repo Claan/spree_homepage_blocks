@@ -1,0 +1,18 @@
+<%= render 'spree/admin/shared/configuration_menu' %>
+
+<% content_for :page_title do %>
+   <%= Spree.t("static_content.blocks") %> <i class="icon-arrow-right"></i> <%= Spree.t("static_content.editing_block") %> "<%= @block.title %>"
+<% end %>
+
+<% content_for :page_actions do %>
+  <li><%= button_link_to Spree.t(:back_to_block_list), spree.admin_blocks_url, :icon => 'icon-arrow-left' %></li>
+<% end %>
+
+<%= render "spree/shared/error_messages", :target => @block %>
+
+<%= form_for [:admin, @block] do |f| %>
+  <fieldset class="no-border-top">
+    <%= render :partial => 'form', :locals => { :f => f } %>
+    <%= render :partial => 'spree/admin/shared/edit_resource_links' %>
+  </fieldset>
+<% end %>

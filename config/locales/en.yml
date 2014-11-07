@@ -1,5 +1,26 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
-  hello: "Hello world"
+  activerecord:
+    attributes:
+      spree/block:
+        title: Title
+        link: Link
+        image: Image
+        position: Position
+    models:
+      spree/block:
+        few: Blocks
+        many: Blocks
+        one: Block
+        other: Blocks
+  spree:
+    admin:
+      tab:
+        blocks: Blocks
+    back_to_blocks_list: "Back to blocks list"
+    block: Block 
+    blocks: Blocks
+    static_content:
+      blocks: Blocks 
+      new_block: New block 
+      editing_block: Editing block 
+      link: Link
