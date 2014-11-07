@@ -1,7 +1,9 @@
 SpreeHomepageBlocks
 ===================
 
-Introduction goes here.
+Extension for spree which allows the admin to choose advertisement blocks to put in the homepage.
+The advertisement blocks are comprised of a promo image and a link (external or internal).
+
 
 Installation
 ------------
@@ -36,4 +38,4 @@ Simply add this require statement to your spec_helper:
 require 'spree_homepage_blocks/factories'
 ```
 
-Copyright (c) 2014 [name of extension creator], released under the New BSD License
+Copyright (c) 2014 Nuno Polonia, released under the MIT License
