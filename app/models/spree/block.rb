@@ -16,14 +16,16 @@ class Spree::Block < ActiveRecord::Base
   before_save :update_positions
 
   def update_positions
-    unless new_record?
+    if new_record?
+      Spree::Block.where("position >= ?", self.position).update_all("position = position + 1")
+    else
       return unless prev_position = Spree::Block.find(self.id).position
       if prev_position > self.position
         Spree::Block.where("? <= position AND position < ?", self.position, prev_position).update_all("position = position + 1")
       elsif prev_position < self.position
         Spree::Block.where("? < position AND position <= ?", prev_position,  self.position).update_all("position = position - 1")
       end
-    end
+    end 
 
     true
   end
