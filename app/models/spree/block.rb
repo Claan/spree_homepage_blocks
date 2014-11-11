@@ -13,4 +13,18 @@ class Spree::Block < ActiveRecord::Base
   validates_attachment :image,
     content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
 
+  before_save :update_positions
+
+  def update_positions
+    unless new_record?
+      return unless prev_position = Spree::Block.find(self.id).position
+      if prev_position > self.position
+        Spree::Block.where("? <= position AND position < ?", self.position, prev_position).update_all("position = position + 1")
+      elsif prev_position < self.position
+        Spree::Block.where("? < position AND position <= ?", prev_position,  self.position).update_all("position = position - 1")
+      end
+    end
+
+    true
+  end
 end
