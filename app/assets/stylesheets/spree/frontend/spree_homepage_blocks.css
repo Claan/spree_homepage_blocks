@@ -2,3 +2,15 @@
 Placeholder manifest file.
 the installer will append this file to the app vendored assets here: 'vendor/assets/stylesheets/spree/frontend/all.css'
 */
+
+.homepage_blocks a {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  margin-bottom: 20px;
+}
+
+.homepage_blocks a img {
+  width: 100%;
+  height: auto;
+}
