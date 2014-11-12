@@ -52,7 +52,6 @@ Starting point:
 * Make your changes
 * Ensure specs pass by running `bundle exec rspec spec`
 * Submit your pull request
-```
 
 Copyright (c) 2014 [Nuno Polonia][5], released under the [MIT License][5]
 
